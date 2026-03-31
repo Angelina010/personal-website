@@ -1,0 +1,60 @@
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title fade-up">Experience</h2>
+
+    <div class="timeline">
+      <div
+        *ngFor="let exp of experiences; let i = index"
+        class="timeline__item fade-up"
+        [class.timeline__item--left]="i % 2 !== 0"
+        [style.transition-delay]="(i * 0.12) + 's'"
+      >
+        <!-- Spacer: sits on the empty side of the timeline -->
+        <div class="timeline__spacer"></div>
+
+        <!-- Center dot -->
+        <div class="timeline__center">
+          <div class="timeline__dot"></div>
+        </div>
+
+        <!-- Card -->
+        <div
+          class="timeline__card"
+          (click)="openModal(exp)"
+          (keydown.enter)="openModal(exp)"
+          (keydown.space)="$event.preventDefault(); openModal(exp)"
+          tabindex="0"
+          role="button"
+          [attr.aria-label]="'View details for ' + exp.company"
+        >
+          <div class="timeline__card-header">
+            <div class="timeline__logo">
+              <img [src]="exp.logoUrl" [alt]="exp.company" />
+            </div>
+            <div class="timeline__card-info">
+              <span class="timeline__company">{{ exp.company }}</span>
+              <span class="timeline__role">{{ exp.role }}</span>
+              <span class="timeline__period">{{ exp.period }}</span>
+            </div>
+          </div>
+          <div class="timeline__tags">
+            <span class="tag" *ngFor="let tag of exp.tags">{{ tag }}</span>
+          </div>
+          <div class="timeline__hint">
+            <span>View details</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Experience modal -->
+  <app-experience-modal
+    *ngIf="activeExperience()"
+    [experience]="activeExperience()!"
+    (close)="closeModal()"
+  ></app-experience-modal>
+</section>
