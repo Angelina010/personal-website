@@ -1,0 +1,112 @@
+.navbar {                                                   
+    position: fixed;                                          
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    transition: background 0.25s ease, box-shadow 0.25s ease; 
+
+    &.scrolled {
+      background: color-mix(in srgb, #0d1b2e 90%,
+  transparent);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 #1a2d47;
+    }
+
+    &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    &__logo {
+      font-size: 1.1rem;
+      color: #5b8fee;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    &__links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        color: #7a9cc8;
+        padding: 8px 14px;
+        border-radius: 100px;
+        transition: color 0.25s ease, background 0.25s ease;  
+        &:hover { color: #e8f0fe; background: #0a1625; }      
+      }
+    }
+
+    &__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+
+      span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #e8f0fe;
+        border-radius: 2px;
+        transition: transform 0.25s ease, opacity 0.25s ease; 
+      }
+
+      &.open {
+        span:nth-child(1) { transform: translateY(7px)        
+  rotate(45deg); }
+        span:nth-child(2) { opacity: 0; }
+        span:nth-child(3) { transform: translateY(-7px)       
+  rotate(-45deg); }
+      }
+    }
+
+    &__mobile {
+      display: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: color-mix(in srgb, #0d1b2e 96%,
+  transparent);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid #1a2d47;
+
+      &.open { max-height: 300px; }
+
+      ul { list-style: none; padding: 12px 20px 20px; display:
+   flex; flex-direction: column; gap: 4px; }
+
+      button {
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 500;
+        color: #e8f0fe;
+        padding: 10px 14px;
+        border-radius: 6px;
+        transition: background 0.25s ease;
+        &:hover { background: #0a1625; }
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    .navbar__links     { display: none; }
+    .navbar__hamburger { display: flex; }
+    .navbar__mobile    { display: block; }
+  }

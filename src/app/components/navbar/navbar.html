@@ -1,0 +1,27 @@
+<nav class="navbar" [class.scrolled]="scrolled()">          
+    <div class="container navbar__inner">
+      <button class="navbar__logo"
+  (click)="navigate('hero')">Angelina Zhou</button>
+
+      <ul class="navbar__links">
+        <li *ngFor="let link of navLinks">
+          <button (click)="navigate(link.id)">{{ link.label   
+  }}</button>
+        </li>
+      </ul>
+
+      <button class="navbar__hamburger" (click)="toggleMenu()"
+   [class.open]="menuOpen()" aria-label="Toggle menu">        
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="navbar__mobile" [class.open]="menuOpen()">    
+      <ul>
+        <li *ngFor="let link of navLinks">
+          <button (click)="navigate(link.id)">{{ link.label   
+  }}</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
