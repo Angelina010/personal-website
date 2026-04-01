@@ -1,0 +1,67 @@
+.footer {
+  border-top: 1.5px solid var(--color-border-light);
+  padding: 32px 0;
+  background: var(--color-surface);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  &__left { display: flex; flex-direction: column; gap: 3px; }
+
+  &__name {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--color-text);
+  }
+
+  &__copy { font-size: 12px; color: var(--color-text-muted); }
+
+  &__links {
+    display: flex;
+    gap: 8px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid var(--color-border-light);
+      color: var(--color-text-muted);
+      transition: all var(--transition);
+      background: var(--color-bg);
+
+      &:hover {
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+        background: var(--color-accent-light);
+      }
+    }
+  }
+
+  &__back-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-border-light);
+    background: var(--color-bg);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition);
+
+    &:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: var(--color-accent-light);
+      transform: translateY(-2px);
+    }
+  }
+}

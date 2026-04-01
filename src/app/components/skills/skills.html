@@ -1,0 +1,27 @@
+<section id="skills" class="skills-section">
+  <div class="container">
+    <h2 class="section-title fade-up">Skills</h2>
+
+    <div class="skills-groups">
+      <div
+        *ngFor="let group of skillGroups; let i = index"
+        class="skills-group fade-up"
+        [style.transition-delay]="(i * 0.12) + 's'"
+      >
+        <h3 class="skills-group__title">{{ group.category }}</h3>
+        <div class="skills-grid">
+          <div class="skill-chip" *ngFor="let skill of group.skills">
+            <img
+              [src]="skill.icon"
+              [alt]="skill.name"
+              class="skill-chip__icon"
+              loading="lazy"
+              (error)="$any($event.target).style.display='none'"
+            />
+            <span class="skill-chip__name">{{ skill.name }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
