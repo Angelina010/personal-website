@@ -1,0 +1,45 @@
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title fade-up">Projects</h2>
+
+    <div class="projects-grid">
+      <div
+        *ngFor="let project of projects; let i = index"
+        class="project-card fade-up"
+        [style.transition-delay]="(i * 0.1) + 's'"
+        [style.--accent]="project.accentColor"
+        (click)="openModal(project)"
+        role="button"
+        tabindex="0"
+        [attr.aria-label]="'Open ' + project.title"
+        (keydown.enter)="openModal(project)"
+        (keydown.space)="openModal(project); $event.preventDefault()"
+      >
+        <div class="project-card__image">
+          <img *ngIf="project.imageUrl" [src]="project.imageUrl" [alt]="project.title" />
+          <div class="project-card__overlay">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 13L13 3M13 3H7M13 3v6"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="project-card__body">
+          <h3 class="project-card__title">{{ project.title }}</h3>
+          <p class="project-card__subtitle">{{ project.subtitle }}</p>
+          <div class="project-card__tags">
+            <span class="tag" *ngFor="let tag of project.tags.slice(0, 3)">{{ tag }}</span>
+            <span class="tag tag--more" *ngIf="project.tags.length > 3">+{{ project.tags.length - 3 }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<app-project-modal
+  *ngIf="activeProject()"
+  [project]="activeProject()!"
+  (close)="closeModal()"
+></app-project-modal>
