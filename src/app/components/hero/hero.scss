@@ -51,9 +51,11 @@
     }
 
     &__name {
+      font-family: var(--font-display);
       font-size: clamp(3rem, 8vw, 5.5rem);
       font-weight: 300;
       line-height: 1.08;
+      letter-spacing: -.02em;
       color: #5b8fee;
       margin-bottom: 28px;
     }
