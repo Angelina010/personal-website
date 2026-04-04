@@ -59,7 +59,7 @@ export class ExperienceComponent implements AfterViewInit {
       period: 'June 2025 - Aug. 2025',
       location: 'McLean, VA',
       logoUrl: 'assets/capital-one-logo.png',
-      tags: ['TypeScript', 'Vue', ''],
+      tags: ['TypeScript', 'Vue'],
       summary: 'Card Decisioning Team',
       bullets: [
         'Built an internal rules authoring UI with TypeScript and Vue to generate JSON for credit card decision workflows',
