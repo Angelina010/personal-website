@@ -33,7 +33,7 @@ export class ExperienceComponent implements AfterViewInit {
       period: 'May 2026 - Aug. 2026',
       location: 'Kirkland, WA',
       logoUrl: 'assets/google-logo.png',
-      tags: ['LLM', 'Angular'],
+      tags: ['TypeScript', 'Angular', 'LLM'],
       summary: 'Incoming at BigQuery Team in Google Cloud',
       bullets: [],
     },
@@ -44,7 +44,7 @@ export class ExperienceComponent implements AfterViewInit {
       period: 'Jan. 2025 – Present',
       location: 'Ithaca, NY',
       logoUrl: 'assets/napp-lab-logo.png',
-      tags: ['Computer Vision', 'Machine Learning', 'Image Processing'],
+      tags: ['Python', 'OpenCV', 'Flask', 'Machine Learning'],
       summary: 'Placeholder — describe the biological or scientific domain of the research.',
       bullets: [
         'Improved bee color tag detection with OpenCV using RGB to HSV conversion, thresholding, morphological erosion',
@@ -59,7 +59,7 @@ export class ExperienceComponent implements AfterViewInit {
       period: 'June 2025 - Aug. 2025',
       location: 'McLean, VA',
       logoUrl: 'assets/capital-one-logo.png',
-      tags: ['TypeScript', 'Vue'],
+      tags: ['TypeScript', 'Vue', 'Pinia', 'DynamoDB'],
       summary: 'Card Decisioning Team',
       bullets: [
         'Built an internal rules authoring UI with TypeScript and Vue to generate JSON for credit card decision workflows',
@@ -74,7 +74,7 @@ export class ExperienceComponent implements AfterViewInit {
       period: 'Jan. 2025 – May 2025',
       location: 'Ithaca, NY',
       logoUrl: 'assets/zhang-lab-logo.png',
-      tags: ['LLM', 'Verilog', 'NLP'],
+      tags: ['Python', 'AutoGen', 'LLM', 'Verilog', 'NLP'],
       summary: 'Generating Verilog code with a team of LLM Agents',
       bullets: [
         'Designed and implemented a team of LLM agents using Python and AutoGen to automate and accelerate Verilog hardware design',
