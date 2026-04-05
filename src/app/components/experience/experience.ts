@@ -45,7 +45,7 @@ export class ExperienceComponent implements AfterViewInit {
       location: 'Ithaca, NY',
       logoUrl: 'assets/napp-lab-logo.png',
       tags: ['Python', 'OpenCV', 'Flask', 'Machine Learning'],
-      summary: 'Placeholder — describe the biological or scientific domain of the research.',
+      summary: 'Developed computer vision pipelines to improve bee tag detection accuracy and streamline researcher workflows.',
       bullets: [
         'Improved bee color tag detection with OpenCV using RGB to HSV conversion, thresholding, morphological erosion',
         'Distinguished yellow bee tags from yellow pollen by detecting black tag numbers, reducing false positive rates from 30.6% to 16.7% and 40.4% to 8.6% in test trials',
