@@ -92,8 +92,11 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
 
   private resize(): void {
     const s = this.sectionRef.nativeElement;
-    this.canvas.width = s.offsetWidth;
-    this.canvas.height = s.offsetHeight;
+    const w = s.offsetWidth;
+    const h = s.offsetHeight;
+    if (this.canvas.width === w && Math.abs(this.canvas.height - h) < 80) return;
+    this.canvas.width = w;
+    this.canvas.height = h;
   }
 
   private spawnBubbles(): void {
