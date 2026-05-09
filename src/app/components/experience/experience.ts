@@ -3,6 +3,11 @@ import { CommonModule } from '@angular/common';
 import { ScrollService } from '../../services/scroll';
 import { ExperienceModalComponent } from '../experience-modal/experience-modal';
 
+export interface ExperienceProject {
+  name: string;
+  bullets: string[];
+}
+
 export interface Experience {
   id: string;
   company: string;
@@ -13,6 +18,7 @@ export interface Experience {
   tags: string[];
   summary: string;
   bullets: string[];
+  projects?: ExperienceProject[];
 }
 
 @Component({
@@ -44,12 +50,25 @@ export class ExperienceComponent implements AfterViewInit {
       period: 'Jan. 2025 – Present',
       location: 'Ithaca, NY',
       logoUrl: 'assets/napp-lab-logo.png',
-      tags: ['Python', 'OpenCV', 'Flask', 'Machine Learning'],
-      summary: 'Developed computer vision pipelines to improve bee tag detection accuracy and streamline researcher workflows.',
-      bullets: [
-        'Improved bee color tag detection with OpenCV using RGB to HSV conversion, thresholding, morphological erosion',
-        'Distinguished yellow bee tags from yellow pollen by detecting black tag numbers, reducing false positive rates from 30.6% to 16.7% and 40.4% to 8.6% in test trials',
-        'Built a Flask app to verify tag color with one click, automating file retrieval and replacing manual drag-and-drop',
+      tags: ['Python', 'OpenCV', 'Flask', 'Machine Learning', 'LLM'],
+      summary: 'Undergraduate research spanning LLM-based optimization pipelines and computer vision.',
+      bullets: [],
+      projects: [
+        {
+          name: 'Robot Component Selection via LLM + Constraint Optimization',
+          bullets: [
+            'Evaluated an LLM-based pipeline that generates constraint models solved by an optimization engine (IBM CPLEX) for Pareto-optimal robot component selection, benchmarking against a direct LLM baseline that selects components end-to-end',
+            'Demonstrated the constraint-based approach outperforms the direct LLM baseline, which frequently selects components violating physical design constraints',
+          ],
+        },
+        {
+          name: 'Bee Color Tag Detection',
+          bullets: [
+            'Improved bee color tag detection with OpenCV using RGB to HSV conversion, thresholding, morphological erosion',
+            'Distinguished yellow bee tags from yellow pollen by detecting black tag numbers, reducing false positive rates from 30.6% to 16.7% and 40.4% to 8.6% in test trials',
+            'Built a Flask app to verify tag color with one click, automating file retrieval and replacing manual drag-and-drop',
+          ],
+        },
       ],
     },
     {

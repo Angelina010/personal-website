@@ -79,8 +79,8 @@
   }
 
   &__logo {
-    width: 68px;
-    height: 68px;
+    width: 80px;
+    height: 80px;
     border-radius: var(--radius-md);
     background: var(--color-bg-2);
     border: 1.5px solid var(--color-border-light);
@@ -165,6 +165,23 @@
     margin-bottom: 20px;
   }
 
+  &__project {
+    & + & {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--color-border-light);
+    }
+  }
+
+  &__project-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-text-mid);
+    margin-bottom: 12px;
+  }
+
   &__bullets {
     list-style: none;
     display: flex;
@@ -201,7 +218,7 @@
 
     &__header { gap: 14px; }
 
-    &__logo { width: 56px; height: 56px; }
+    &__logo { width: 64px; height: 64px; }
 
     &__company { font-size: 1.3rem; }
   }

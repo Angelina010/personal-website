@@ -43,10 +43,22 @@
       <!-- Summary -->
       <p class="modal__summary" *ngIf="experience.summary">{{ experience.summary }}</p>
 
-      <!-- Bullets -->
-      <ul class="modal__bullets" *ngIf="experience.bullets.length">
-        <li *ngFor="let b of experience.bullets">{{ b }}</li>
-      </ul>
+      <!-- Multi-project layout -->
+      <ng-container *ngIf="experience.projects?.length; else flatBullets">
+        <div class="modal__project" *ngFor="let project of experience.projects">
+          <p class="modal__project-title">{{ project.name }}</p>
+          <ul class="modal__bullets">
+            <li *ngFor="let b of project.bullets">{{ b }}</li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <!-- Flat bullets fallback -->
+      <ng-template #flatBullets>
+        <ul class="modal__bullets" *ngIf="experience.bullets.length">
+          <li *ngFor="let b of experience.bullets">{{ b }}</li>
+        </ul>
+      </ng-template>
 
     </div>
   </div>
